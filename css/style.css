@@ -193,4 +193,110 @@ footer p {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes underlineGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.btn:hover {
+  animation: pulse 0.6s infinite;
+}
+
+.video-wrapper {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.video-wrapper.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.typing {
+  opacity: 0;
+}
+.typing.animate {
+  opacity: 1;
+  overflow: hidden;
+  border-right: 0.15em solid #333;
+  white-space: nowrap;
+  animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+}
+
+.gradient-bg {
+  opacity: 0;
+}
+.gradient-bg.animate {
+  opacity: 1;
+  background: linear-gradient(270deg, #ff7e5f, #feb47b);
+  background-size: 400% 400%;
+  animation: gradientMove 8s ease infinite;
+}
+
+.departamentos-title {
+  display: inline-block;
+  position: relative;
+  opacity: 0;
+}
+.departamentos-title.animate {
+  opacity: 1;
+}
+.departamentos-title.animate::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 3px;
+  background: #ff7e5f;
+  animation: underlineGrow 1s ease forwards;
+}
+
 /*# sourceMappingURL=style.css.map */

@@ -9,39 +9,37 @@
     <body>
         <main>
             <!-- Hero -->
-            <header class="hero">
-                <h1>Departamentos en Alquiler</h1>
+            <header class="hero fade-in gradient-bg">
+                <h1 class="typing">Departamentos en Alquiler</h1>
                 <p>San Bernardo - Buenos Aires</p>
                 <a href="#departamentos" class="btn">Ver Departamentos</a>
             </header>
 
             <!-- Departamentos -->
-            <section id="departamentos" class="container">
+            <section id="departamentos" class="container fade-in">
                 <h2>Nuestros Departamentos</h2>
 
                 <!-- Depto 6 personas A -->
-                <article class="departamento">
+                <article class="departamento slide-in-left">
                     <h3>Departamento para 6 personas – Opción A</h3>
                     <p>
                         Amplio y luminoso, ideal para familias. Cerca de la
                         playa.
                     </p>
                     <div class="media">
-                        <div class="video-wrapper">
+                        <div class="video-wrapper fade-in">
                             <video
                                 controls
                                 src="videos/video 3 6 personas.mp4"></video>
                         </div>
-                        <div class="video-wrapper">
+                        <div class="video-wrapper fade-in">
                             <video
                                 controls
                                 src="videos/video 4 6 persona.mp4"></video>
                         </div>
                     </div>
-                    <button class="btn-info" data-target="infoA">
-                        Más información
-                    </button>
-                    <div id="infoA" class="info hidden">
+                    <button class="btn-info btn">Más información</button>
+                    <div id="infoA" class="info hidden fade-in">
                         <p>
                             Este departamento cuenta con 2 habitaciones, cocina
                             equipada y living amplio. Ideal para familias
@@ -51,20 +49,18 @@
                 </article>
 
                 <!-- Depto 6 personas B -->
-                <article class="departamento">
+                <article class="departamento slide-in-left">
                     <h3>Departamento para 6 personas – Opción B</h3>
                     <p>Con balcón y vista al mar.</p>
                     <div class="media">
-                        <div class="video-wrapper">
+                        <div class="video-wrapper fade-in">
                             <video
                                 controls
                                 src="videos/video 1 .mp4"></video>
                         </div>
                     </div>
-                    <button class="btn-info" data-target="infoB">
-                        Más información
-                    </button>
-                    <div id="infoB" class="info hidden">
+                    <button class="btn-info btn">Más información</button>
+                    <div id="infoB" class="info hidden fade-in">
                         <p>
                             Este departamento incluye balcón privado con vista
                             al mar, 2 dormitorios y cocina integrada. Perfecto
@@ -74,16 +70,16 @@
                 </article>
 
                 <!-- Depto 4 personas -->
-                <article class="departamento">
+                <article class="departamento slide-in-left">
                     <h3>Departamento para 4 personas</h3>
                     <p>Acogedor, perfecto para parejas o grupos pequeños.</p>
                     <div class="media">
-                        <div class="video-wrapper">
+                        <div class="video-wrapper fade-in">
                             <video
                                 controls
                                 src="videos/video 2 4 personas.mp4"></video>
                         </div>
-                        <div class="grid-fotos">
+                        <div class="grid-fotos fade-in">
                             <img
                                 src="images/img 1 .jpg"
                                 alt="Depto 4 foto 1" />
@@ -101,10 +97,8 @@
                                 alt="Depto 4 foto 5" />
                         </div>
                     </div>
-                    <button class="btn-info" data-target="infoC">
-                        Más información
-                    </button>
-                    <div id="infoC" class="info hidden">
+                    <button class="btn-info btn">Más información</button>
+                    <div id="infoC" class="info hidden fade-in">
                         <p>
                             Este departamento cuenta con 1 dormitorio, cocina
                             equipada y baño completo. Ideal para parejas o
@@ -115,7 +109,7 @@
             </section>
 
             <!-- Contacto -->
-            <section id="contacto" class="contacto">
+            <section id="contacto" class="contacto fade-in">
                 <h2>Contacto</h2>
                 <p>Teléfono: 123-456-789</p>
                 <p>Email: alquileres@ejemplo.com</p>
@@ -123,7 +117,7 @@
             </section>
 
             <!-- Footer -->
-            <footer>
+            <footer class="fade-in">
                 <p>&copy; 2025 Departamentos en Alquiler</p>
             </footer>
         </main>
@@ -141,5 +135,33 @@
                 });
             });
         </script>
+        <script>
+    // Seleccionamos todos los elementos que tienen animaciones
+    const animatedElements = document.querySelectorAll(
+        ".fade-in, .slide-in-left, .typing, .gradient-bg"
+    );
+
+    // Configuración del observer
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Activa la animación cuando el elemento entra en pantalla
+                    entry.target.classList.add("animate");
+                } else {
+                    // Opcional: quitar animación al salir
+                    // entry.target.classList.remove("animate");
+                }
+            });
+        },
+        {
+            threshold: 0.2, // Se activa cuando al menos el 20% del elemento es visible
+        }
+    );
+
+    // Observamos cada elemento animado
+    animatedElements.forEach((el) => observer.observe(el));
+</script>
+
     </body>
 </html>
