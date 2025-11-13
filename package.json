@@ -1,0 +1,16 @@
+{
+  "name": "departamentos-alquiler",
+  "version": "1.0.0",
+  "description": "Página web para promocionar departamentos en alquiler",
+  "main": "index.js",
+  "scripts": {
+  "sass": "sass --watch scss/style.scss css/style.css"
+
+  },
+  "author": "Alitan",
+  "license": "MIT",
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+  
+}

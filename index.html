@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Departamentos en Alquiler</title>
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <main>
+            <!-- Hero -->
+            <header class="hero">
+                <h1>Departamentos en Alquiler</h1>
+                <p>San Bernardo - Buenos Aires</p>
+                <a href="#departamentos" class="btn">Ver Departamentos</a>
+            </header>
+
+            <!-- Departamentos -->
+            <section id="departamentos" class="container">
+                <h2>Nuestros Departamentos</h2>
+
+                <!-- Depto 6 personas A -->
+                <article class="departamento">
+                    <h3>Departamento para 6 personas – Opción A</h3>
+                    <p>
+                        Amplio y luminoso, ideal para familias. Cerca de la
+                        playa.
+                    </p>
+                    <div class="media">
+                        <div class="video-wrapper">
+                            <video
+                                controls
+                                src="videos/video 3 6 personas.mp4"></video>
+                        </div>
+                        <div class="video-wrapper">
+                            <video
+                                controls
+                                src="videos/video 4 6 persona.mp4"></video>
+                        </div>
+                    </div>
+                    <button class="btn-info" data-target="infoA">
+                        Más información
+                    </button>
+                    <div id="infoA" class="info hidden">
+                        <p>
+                            Este departamento cuenta con 2 habitaciones, cocina
+                            equipada y living amplio. Ideal para familias
+                            grandes que buscan comodidad y cercanía a la playa.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Depto 6 personas B -->
+                <article class="departamento">
+                    <h3>Departamento para 6 personas – Opción B</h3>
+                    <p>Con balcón y vista al mar.</p>
+                    <div class="media">
+                        <div class="video-wrapper">
+                            <video
+                                controls
+                                src="videos/video 1 .mp4"></video>
+                        </div>
+                    </div>
+                    <button class="btn-info" data-target="infoB">
+                        Más información
+                    </button>
+                    <div id="infoB" class="info hidden">
+                        <p>
+                            Este departamento incluye balcón privado con vista
+                            al mar, 2 dormitorios y cocina integrada. Perfecto
+                            para disfrutar de la brisa marina.
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Depto 4 personas -->
+                <article class="departamento">
+                    <h3>Departamento para 4 personas</h3>
+                    <p>Acogedor, perfecto para parejas o grupos pequeños.</p>
+                    <div class="media">
+                        <div class="video-wrapper">
+                            <video
+                                controls
+                                src="videos/video 2 4 personas.mp4"></video>
+                        </div>
+                        <div class="grid-fotos">
+                            <img
+                                src="images/img 1 .jpg"
+                                alt="Depto 4 foto 1" />
+                            <img
+                                src="images/img 2.jpg"
+                                alt="Depto 4 foto 2" />
+                            <img
+                                src="images/img 3.jpg"
+                                alt="Depto 4 foto 3" />
+                            <img
+                                src="images/img 4.jpg"
+                                alt="Depto 4 foto 4" />
+                            <img
+                                src="images/img 5.jpg"
+                                alt="Depto 4 foto 5" />
+                        </div>
+                    </div>
+                    <button class="btn-info" data-target="infoC">
+                        Más información
+                    </button>
+                    <div id="infoC" class="info hidden">
+                        <p>
+                            Este departamento cuenta con 1 dormitorio, cocina
+                            equipada y baño completo. Ideal para parejas o
+                            grupos pequeños que buscan practicidad y confort.
+                        </p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Contacto -->
+            <section id="contacto" class="contacto">
+                <h2>Contacto</h2>
+                <p>Teléfono: 123-456-789</p>
+                <p>Email: alquileres@ejemplo.com</p>
+                <a href="https://wa.me/549123456789" class="btn">WhatsApp</a>
+            </section>
+
+            <!-- Footer -->
+            <footer>
+                <p>&copy; 2025 Departamentos en Alquiler</p>
+            </footer>
+        </main>
+
+        <!-- Script para desplegar info -->
+        <script>
+            document.querySelectorAll(".btn-info").forEach((btn) => {
+                btn.addEventListener("click", () => {
+                    const targetId = btn.getAttribute("data-target");
+                    const infoBox = document.getElementById(targetId);
+                    infoBox.classList.toggle("visible");
+                    btn.textContent = infoBox.classList.contains("visible")
+                        ? "Ocultar información"
+                        : "Más información";
+                });
+            });
+        </script>
+    </body>
+</html>

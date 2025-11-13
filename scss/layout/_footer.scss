@@ -1,0 +1,19 @@
+@use "sass:color";
+@use "../components/variables" as vars;
+
+footer {
+  background: vars.$primary;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 0; // eliminamos el hueco extra
+  width: 100%;
+  font-size: 0.9rem;
+  border-top: 4px solid color.adjust(vars.$primary, $lightness: -10%);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+
+  p {
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+}

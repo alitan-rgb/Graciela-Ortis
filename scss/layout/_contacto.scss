@@ -1,0 +1,26 @@
+@use "sass:color";
+@use "../components/variables" as vars;
+
+.contacto {
+    background: vars.$primary;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 0; // ← importante
+
+    .btn {
+        background: vars.$accent;
+        color: vars.$primary;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        display: inline-block;
+        margin-top: 1rem;
+        transition: background 0.3s;
+
+        &:hover {
+            background: color.adjust(vars.$accent, $lightness: -10%);
+        }
+    }
+}
